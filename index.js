@@ -1,45 +1,35 @@
-const crypto = require('crypto');
-const express = require('express');
-const { createServer } = require('http');
-const WebSocket = require('ws');
+const app = require('express')();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
 
-const app = express();
-
-const server = createServer(app);
-server.address();
-
-const wss = new WebSocket.Server({ server });
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello world</h1>');
+    res.sendFile(__dirname + '/index.html');
 });
 
-wss.on('connection', function(ws) {
-  console.log("client joined.");
 
-  // send "hello world" interval
-  const textInterval = setInterval(() => ws.send("hello world!"), 100);
 
-  // send random bytes interval
-  const binaryInterval = setInterval(() => ws.send(crypto.randomBytes(8).buffer), 110);
+io.on('connection', (socket) => {
+  console.log('a user connected');
 
-  ws.on('message', function(data) {
-    if (typeof(data) === "string") {
-      // client sent a string
-      console.log("string received from client -> '" + data + "'");
 
-    } else {
-      console.log("binary received from client -> " + Array.from(data).join(", ") + "");
-    }
-  });
+    io.emit('GetMessage', "You Connected server...");
 
-  ws.on('close', function() {
-    console.log("client left.");
-    clearInterval(textInterval);
-    clearInterval(binaryInterval);
-  });
+
+    socket.on('ack', (msg) => {
+    console.log('message: ' + msg); 
+    });
+
+
+    socket.on('disconnect', () => {
+    console.log('user disconnected');
+    });
+
+
+
 });
 
-server.listen(process.env.PORT || 8080, function() {
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+
+http.listen(process.env.port || 8080, () => {
+    console.log('Connected at 3000');
 });
