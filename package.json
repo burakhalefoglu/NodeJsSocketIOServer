@@ -1,5 +1,5 @@
 {
-  "name": "nodejs",
+  "name": "NodeJsWebServer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,6 +20,7 @@
   "dependencies": {
     "crypto": "^1.0.1",
     "express": "^4.17.1",
+    "http": "0.0.1-security",
     "ws": "^7.4.0"
   }
 }
