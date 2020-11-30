@@ -1,15 +1,23 @@
 {
-  "name": "nodesserver",
+  "name": "nodejswebserver",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":  "index.js"
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burakhalefoglu/NodeJsWebServer.git"
   },
   "keywords": [],
   "author": "appneuron <info@appneuron.com> (appneuron.com)",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/burakhalefoglu/NodeJsWebServer/issues"
+  },
+  "homepage": "https://github.com/burakhalefoglu/NodeJsWebServer#readme",
   "dependencies": {
     "express": "^4.17.1",
     "http": "0.0.1-security",
