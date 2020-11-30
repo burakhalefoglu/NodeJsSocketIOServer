@@ -9,6 +9,7 @@ const server = createServer(app);
 server.address();
 
 const wss = new WebSocket.Server({ server });
+
 app.get('/', (req, res) => {
   res.send('<h1>Hello world</h1>');
 });
@@ -39,6 +40,6 @@ wss.on('connection', function(ws) {
   });
 });
 
-server.listen(8080,'0.0.0.0', function() {
+server.listen(8080,'https://nodejsherko.herokuapp.com/', function() {
   console.log('Listening');
 });
