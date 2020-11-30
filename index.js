@@ -30,6 +30,6 @@ io.on('connection', (socket) => {
 });
 
 
-http.listen(process.env.port || 8080 || 3030, () => {
+http.listen(process.env.port || 8080 || 3000, () => {
     console.log('Connected at 3000');
 });
