@@ -40,6 +40,6 @@ wss.on('connection', function(ws) {
   });
 });
 
-server.listen(8080,'https://nodejsherko.herokuapp.com/', function() {
+server.listen(8080, function() {
   console.log('Listening');
 });
