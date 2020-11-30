@@ -1,12 +1,10 @@
 {
-  "name": "nodejswebserver",
+  "name": "NodeJsWebServer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node test.js",
-    "web": "node index.js"
+      "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -21,9 +19,6 @@
   "homepage": "https://github.com/burakhalefoglu/NodeJsWebServer#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "http": "0.0.1-security",
-    "node": "^15.3.0",
-    "node.js": "0.0.1-security",
     "socket.io": "^3.0.3"
   }
 }
