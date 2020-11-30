@@ -1,5 +1,5 @@
 {
-  "name": "nodejs",
+  "name": "nodejsappunity",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "node": "14.15.1"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,6 @@
   "homepage": "https://github.com/burakhalefoglu/NodeJsWebServer#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "http": "0.0.1-security",
     "socket.io": "^3.0.3"
   }
 }
